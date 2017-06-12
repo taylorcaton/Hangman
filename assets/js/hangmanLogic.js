@@ -139,6 +139,7 @@ function start(){
   money = 100;
   guesses = 6;
   lettersGuessed = [];
+  mysteryWord = "";
 
   //Pick a random word
   theWord.wordToArray();
@@ -164,4 +165,48 @@ function updateScreen(){
   mysteryText.textContent = mysteryWord;
   guessesLeftText.textContent = guesses;
   moneyText.textContent = money;
+  tikiHeads(guesses);
+}
+
+//THE CANVAS
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+var tiki1 = document.getElementById('tiki1');
+var tiki2 = document.getElementById('tiki2');
+var tiki3 = document.getElementById('tiki3');
+var tiki4 = document.getElementById('tiki4');
+var tiki5 = document.getElementById('tiki5');
+var tiki6 = document.getElementById('tiki6');
+
+
+function tikiHeads(section){
+  canvas.width = window.innerWidth;
+  // canvas.height = window.innerHeight;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  var nextX = 0;
+  var currentTiki;
+    
+  for(var i=1; i<=section; i++){
+
+    
+    if(i===1){
+      currentTiki = tiki1;
+    }else if (i===2) {
+      currentTiki = tiki2;
+    }else if (i===3) {
+      currentTiki = tiki3;
+    }else if (i===4) {
+      currentTiki = tiki4;
+    }else if (i===5) {
+      currentTiki = tiki5;
+    }else if (i===6) {
+      currentTiki = tiki6;
+    }
+
+    ctx.drawImage(currentTiki, nextX, 10);
+    nextX += window.innerWidth/6;
+
+  }
+  
 }

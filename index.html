@@ -14,6 +14,7 @@
 	<!--Extra Styles-->
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Cutive" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
 
 </head>
 <body>
@@ -23,9 +24,8 @@
         <div class="row">
             <div class="col-lg-12 text-center">
             	
-                <h1>Classy Hangman</h1>
+                <h1>Tiki Hangman</h1>
                 <p class="lead">A Gentleman's Game</p>
-                <p class="small">Pull up a stool, pour a drink, and prepare to die.</p>
                 <ul class="list-unstyled list-inline">
                     <li class="list-inline-item"><button onclick="start()" class="btn-primary">Start Game</button></li>
                     <li class="list-inline-item"><button onclick="bribe()" class="btn-danger">Bribe</button></li>
@@ -58,7 +58,8 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1 martini" id="box3">
             	
-                <h1>Martini Picture</h1>
+                <canvas id="myCanvas" class='img-responsive'></canvas>
+                
                 
             </div>
         </div>
@@ -66,6 +67,14 @@
 
     </div>
     <!-- /.container -->
+    <div style="display:none;">
+		<img src="assets/images/tiki1.png" id="tiki1" alt="">
+		<img src="assets/images/tiki2.png" id="tiki2" alt="">
+		<img src="assets/images/tiki3.png" id="tiki3" alt="">
+		<img src="assets/images/tiki4.png" id="tiki4" alt="">
+		<img src="assets/images/tiki5.png" id="tiki5" alt="">
+		<img src="assets/images/tiki6.png" id="tiki6" alt="">
+	</div>
 	
 	
 	<script src="assets/js/hangmanlogic.js"></script>
