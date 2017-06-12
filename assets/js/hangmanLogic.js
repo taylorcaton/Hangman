@@ -1,5 +1,7 @@
+
+
 // Let's start by grabbing a reference to the <span> below.
-var wordBank = ["MARTINI", "GIN AND TONIC", "ON THE ROCKS"];
+var wordBank = ["MARTINI", "GIN AND TONIC", "ON THE ROCKS", "BOSSA NOVA", "BONGOS", "UKULELE", "HULA DANCE", "PINEAPPLE RUM", "VOLCANO", "HANG TEN"];
 var lettersGuessed;
 var mysteryWord = "";
 var mysteryWordArr = [];
@@ -102,6 +104,9 @@ function badStuff(){
 
 //$50 for random letter and badStuff
 function bribe(){
+  
+  if(!beginGame || money <= 0) return;
+
   money -= 50;
 
   var randNum = Math.floor(Math.random() * letterArray.length);
@@ -186,27 +191,36 @@ function tikiHeads(section){
 
   var nextX = 0;
   var currentTiki;
-    
-  for(var i=1; i<=section; i++){
 
+  if (section > 0){
     
-    if(i===1){
-      currentTiki = tiki1;
-    }else if (i===2) {
-      currentTiki = tiki2;
-    }else if (i===3) {
-      currentTiki = tiki3;
-    }else if (i===4) {
-      currentTiki = tiki4;
-    }else if (i===5) {
-      currentTiki = tiki5;
-    }else if (i===6) {
-      currentTiki = tiki6;
+    for(var i=1; i<=section; i++){
+
+      
+      if(i===1){
+        currentTiki = tiki1;
+      }else if (i===2) {
+        currentTiki = tiki2;
+      }else if (i===3) {
+        currentTiki = tiki3;
+      }else if (i===4) {
+        currentTiki = tiki4;
+      }else if (i===5) {
+        currentTiki = tiki5;
+      }else if (i===6) {
+        currentTiki = tiki6;
+      }
+
+      ctx.drawImage(currentTiki, nextX, 10);
+      nextX += window.innerWidth/6;
+
     }
-
-    ctx.drawImage(currentTiki, nextX, 10);
-    nextX += window.innerWidth/6;
-
+  }else{
+    ctx.font = "40px Sigmar One";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.fillText("GAME OVER", canvas.width/2, canvas.height/2); 
   }
   
 }
+
