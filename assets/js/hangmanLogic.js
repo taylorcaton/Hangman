@@ -234,7 +234,6 @@ function tikiHeads(section){
   
 }
 
-
 //Check for winner, stop game, display winner text, increase wins
 function winnerCheck(){
   for (var i = 0; i < mysteryWordArr.length; i++) {
@@ -247,3 +246,11 @@ function winnerCheck(){
   if(wins%3==0) money+=50;
   mysteryWord = "";
 }
+
+//Get the mobile keyboard to appear?
+document.getElementById('openKeyboard').addEventListener('click', function(){
+    var inputElement = document.getElementById('hiddenInput');
+    inputElement.style.visibility = 'visible'; // unhide the input
+    inputElement.focus(); // focus on it so keyboard pops
+    inputElement.style.visibility = 'hidden'; // hide it again
+});
