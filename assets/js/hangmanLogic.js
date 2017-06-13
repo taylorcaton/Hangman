@@ -139,9 +139,6 @@ function bribe(){
 
 function start(){
   //Initial Display
-  document.getElementById("box1").style.display = 'initial';
-  document.getElementById("box2").style.display = 'initial';
-  document.getElementById("box3").style.display = 'initial';
   money = 100;
   guesses = 6;
   lettersGuessed = [];
@@ -164,11 +161,13 @@ function start(){
   moneyText = document.getElementById("moneyText");
   winsText = document.getElementById("winsText");
 
+  //update the screen
   updateScreen();
 
   beginGame = true;
 }
 
+//Updates the mysteryWord, guessesLeft, money, & wins
 function updateScreen(){
   mysteryText.textContent = mysteryWord;
   guessesLeftText.textContent = guesses;
