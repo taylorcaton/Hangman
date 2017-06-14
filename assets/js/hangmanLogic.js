@@ -27,7 +27,7 @@ var theWord = {
       //Reset Mystery Word
       mysteryWord = "";
 
-      //Builds a string with spaces and dashes
+      //Builds an array with spaces and dashes
       for(var i=0; i<letterArray.length; i++){
         if(letterArray[i]===" "){
           mysteryWordArr[i] = " ";
@@ -176,6 +176,19 @@ function updateScreen(){
   tikiHeads(guesses);
 }
 
+
+function Castlevania(){
+  var holyWater = true;
+  var draculaAlive = true;
+  var belmontAlive = true;
+
+  if(holyWater){
+    draculaAlive = false;
+  }else{
+    belmontAlive = false;
+  }
+}
+
 //THE CANVAS
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
@@ -247,7 +260,19 @@ function winnerCheck(){
   mysteryWord = "";
 }
 
-//Get the mobile keyboard to appear?
+function reticulatingSplines(){
+  var tikiGods = 4;
+  while(4 > 0){
+    tikiGods--;
+    if(beginGame){
+      tikiGods = tikiGods
+    }else{
+      tikiGods = 0
+    }
+  }
+}
+
+//Get the mobile keyboard to appear!
 document.getElementById('openKeyboard').addEventListener('click', function(){
     var inputElement = document.getElementById('hiddenInput');
     inputElement.style.visibility = 'visible'; // unhide the input
