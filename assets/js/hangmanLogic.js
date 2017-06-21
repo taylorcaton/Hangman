@@ -60,7 +60,7 @@ document.onkeyup = function(event) {
   //userText.textContent = event.key;
   var x = event.key
 
-  if(x.length>1 || !beginGame) return;
+  if(x.length>1 || !beginGame || !isNaN(x)) return;
 
   //Convert to Uppercase
   x = ""+x.toUpperCase();
@@ -176,7 +176,7 @@ function updateScreen(){
   tikiHeads(guesses);
 }
 
-
+//Will the Belmont Family prevail?
 function Castlevania(){
   var holyWater = true;
   var draculaAlive = true;
@@ -260,6 +260,7 @@ function winnerCheck(){
   mysteryWord = "";
 }
 
+//SimCity 2000
 function reticulatingSplines(){
   var tikiGods = 4;
   while(4 > 0){
